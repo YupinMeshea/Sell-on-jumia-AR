@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>البيع على چوميا مصر</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Lato:wght@400;700;900&family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #F68B1F;
+  --orange-deep: #e07b10;
+  --orange-soft: #FEF3E2;
+  --black: #111111;
+  --dark: #1c1c1c;
+  --mid: #3d3d3d;
+  --gray: #737373;
+  --border: #e8e8e8;
+  --white: #ffffff;
+  --bg: #f7f7f7;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Cairo', sans-serif; background: var(--orange-soft); color: var(--black); overflow-x: hidden; }
+
+.page-wrap { max-width: 100%; margin: 0 auto; padding: 0 15%; }
+
+/* ─── NAV ─── */
+nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 15%; height: 64px;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo-box {
+  background: var(--orange); color: white;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem;
+  padding: 4px 12px; border-radius: 6px; letter-spacing: -0.3px;
+}
+.nav-logo-sub { font-size: 0.8rem; color: var(--gray); font-weight: 500; }
+.nav-right { display: flex; align-items: center; gap: 20px; }
+.nav-link { font-size: 0.85rem; font-weight: 500; color: var(--gray); text-decoration: none; transition: color 0.2s; }
+.nav-link:hover { color: var(--orange); }
+.nav-btn {
+  background: var(--orange); color: white; font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem; font-weight: 600; padding: 8px 20px; border-radius: 6px;
+  text-decoration: none; transition: background 0.2s, transform 0.15s;
+  border: none; cursor: pointer;
+}
+.nav-btn:hover { background: var(--orange-deep); transform: translateY(-1px); }
+
+/* ─── COMPACT HERO ─── */
+.hero {
+  border-bottom: 1px solid var(--border);
+  border-radius: 16px;
+  margin: 24px 15% 0;
+  padding: 72px 40px 64px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 40px;
+  background-image: url('hero_image.png');
+  background-size: cover;
+  background-position: center;
+}
+.hero-left { max-width: 600px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--orange-soft); color: var(--orange);
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+  padding: 4px 12px; border-radius: 4px; margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: 'Lato', sans-serif; font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900; line-height: 1.15; letter-spacing: -0.5px;
+  margin-bottom: 12px; color: var(--black); text-align: center;
+}
+.hero h1 span { color: var(--orange); }
+.hero-sub {
+  font-size: 0.95rem; color: white; line-height: 1.7;
+  margin-bottom: 24px; max-width: 440px; text-align: center;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.btn-primary {
+  background: var(--orange); color: white; font-weight: 600; font-size: 0.9rem;
+  padding: 10px 24px; border-radius: 6px; text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 2px 12px rgba(246,139,31,0.35);
+  min-width: 200px; text-align: center;
+}
+.btn-primary:hover { background: var(--orange-deep); transform: translateY(-1px); }
+.btn-ghost {
+  background: var(--orange); color: white; font-weight: 600; font-size: 0.9rem;
+  padding: 10px 24px; border-radius: 6px; text-decoration: none;
+  border: none; transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 2px 12px rgba(246,139,31,0.35);
+  min-width: 200px; text-align: center;
+}
+.btn-ghost:hover { background: var(--orange-deep); transform: translateY(-1px); }
+
+.hero-stats-right {
+  display: flex; align-items: center; gap: 0; flex-shrink: 0;
+  background: var(--bg); border: 1.5px solid var(--border); border-radius: 12px;
+  padding: 20px 28px; gap: 0;
+}
+.hstat-divider { width: 1px; height: 40px; background: var(--border); margin: 0 24px; }
+.hstat { display: flex; flex-direction: column; gap: 3px; }
+.hstat-n { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--orange); }
+.hstat-l { font-size: 0.75rem; color: var(--gray); font-weight: 500; white-space: nowrap; }
+
+.hero-right { display: none; }
+
+/* ─── WHY SELL ─── */
+.why-section { padding: 32px 15%; background: transparent; border-bottom: none; }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+.why-card {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 24px 20px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.18s;
+}
+.why-card:hover { border-color: rgba(246,139,31,0.4); box-shadow: 0 6px 24px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.why-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.why-card-icon { font-size: 1.3rem; flex-shrink: 0; }
+.why-card-title { font-family: 'Cairo', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--black); margin-bottom: 0; }
+.why-card-desc { font-size: 0.83rem; color: var(--gray); line-height: 1.6; }
+
+.why-card-link { text-decoration: none; color: inherit; cursor: pointer; }
+.why-card-link:hover { border-color: rgba(246,139,31,0.4); box-shadow: 0 6px 24px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.why-card-cta { display: inline-block; margin-top: 12px; font-size: 0.8rem; font-weight: 600; color: var(--orange); text-decoration: none; }
+.why-money-links { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+.why-mini-link { font-size: 0.8rem; font-weight: 600; color: var(--orange); text-decoration: none; }
+.why-mini-link:hover { text-decoration: underline; }
+.why-doc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.why-doc-tag {
+  background: var(--orange-soft); color: var(--orange);
+  font-size: 0.75rem; font-weight: 600; padding: 4px 10px; border-radius: 20px;
+}
+
+/* ─── SECTION WRAPPER ─── */
+.page-section { padding: 32px 15%; }
+
+.section-label {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 24px;
+}
+.section-label-tag {
+  background: var(--orange); color: white;
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+  padding: 3px 10px; border-radius: 4px;
+}
+.section-label h2 {
+  font-family: 'Lato', sans-serif; font-size: 1.2rem; font-weight: 900; color: var(--black);
+}
+.section-label-desc { font-size: 0.85rem; color: var(--gray); margin-left: auto; max-width: 360px; text-align: right; line-height: 1.5; }
+
+/* ─── HORIZONTAL CARDS GRID ─── */
+.h-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ─── SECTION 1: OPERATIONS ─── */
+.ops-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 24px;
+  text-decoration: none; color: inherit;
+  display: flex; flex-direction: column;
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.18s;
+  position: relative; overflow: hidden;
+  cursor: pointer;
+}
+.ops-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px; background: var(--orange);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.ops-card:hover { border-color: rgba(246,139,31,0.4); box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-3px); }
+.ops-card:hover::after { transform: scaleX(1); }
+.ops-card.featured {
+  background: var(--black); color: white;
+  border-color: var(--black);
+}
+.ops-card.featured::after { background: var(--orange); }
+.ops-card.featured .ops-desc { color: rgba(255,255,255,0.55); }
+.ops-card.featured .ops-link { color: var(--orange); }
+
+.ops-icon-wrap {
+  width: 48px; height: 48px; border-radius: 10px;
+  background: var(--orange-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; margin-bottom: 16px; flex-shrink: 0;
+}
+.ops-card.featured .ops-icon-wrap { background: rgba(246,139,31,0.15); }
+.ops-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+.ops-desc { font-size: 0.85rem; color: var(--gray); line-height: 1.6; flex: 1; }
+.ops-link {
+  display: flex; align-items: center; gap: 6px;
+  margin-top: 20px; font-size: 0.82rem; font-weight: 600; color: var(--orange);
+  text-decoration: none;
+}
+.ops-link-arrow { transition: transform 0.2s; }
+.ops-card:hover .ops-link-arrow { transform: translateX(4px); }
+
+.journey-card {
+  background: var(--orange);
+  border: none; border-radius: 14px; padding: 28px 24px;
+  color: white; display: flex; flex-direction: column; justify-content: space-between;
+  grid-column: span 1;
+}
+.journey-card .ops-title { color: white; font-size: 1rem; margin-bottom: 16px; }
+.journey-steps { display: flex; flex-direction: column; gap: 0; flex: 1; }
+.jstep { display: flex; align-items: flex-start; gap: 10px; }
+.jstep-left { display: flex; flex-direction: column; align-items: center; }
+.jdot {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: rgba(255,255,255,0.25); border: 1.5px solid rgba(255,255,255,0.6);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; font-weight: 700; color: white; flex-shrink: 0;
+}
+.jline { width: 1.5px; flex: 1; min-height: 14px; background: rgba(255,255,255,0.25); margin: 2px 0; }
+.jstep-text { font-size: 0.8rem; line-height: 1.4; opacity: 0.9; padding-top: 3px; padding-bottom: 10px; }
+
+/* ─── SECTION 2: PRICING ─── */
+.pricing-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+.price-card {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 28px 24px;
+  display: flex; flex-direction: column;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.18s;
+}
+.price-card:hover { border-color: rgba(246,139,31,0.35); box-shadow: 0 8px 28px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.price-card.accent {
+  background: var(--orange); border-color: var(--orange); color: white;
+}
+.price-card.dark { background: var(--black); border-color: var(--black); color: white; }
+
+.pc-icon { font-size: 1.6rem; margin-bottom: 14px; }
+.pc-title { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.pc-val { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; line-height: 1; margin-bottom: 4px; }
+.pc-val.orange { color: var(--orange); }
+.pc-sub { font-size: 0.78rem; opacity: 0.6; line-height: 1.4; margin-bottom: 16px; }
+.pc-divider { height: 1px; background: rgba(0,0,0,0.07); margin-bottom: 14px; }
+.price-card.accent .pc-divider, .price-card.dark .pc-divider { background: rgba(255,255,255,0.15); }
+.pc-note { font-size: 0.82rem; line-height: 1.6; }
+.price-card.accent .pc-note, .price-card.dark .pc-note { opacity: 0.85; }
+.pc-link {
+  margin-top: auto; padding-top: 16px;
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; font-weight: 600; color: var(--orange); text-decoration: none;
+}
+.price-card.accent .pc-link, .price-card.dark .pc-link { color: rgba(255,255,255,0.85); }
+.pc-link:hover { text-decoration: underline; }
+
+.pricing-highlight {
+  margin-top: 14px;
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 12px; padding: 18px 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.ph-icon { font-size: 1.4rem; flex-shrink: 0; }
+.ph-text { font-size: 0.88rem; line-height: 1.6; color: var(--gray); }
+.ph-text strong { color: var(--black); }
+
+/* ─── SECTION 3: KYC ─── */
+.kyc-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; }
+
+.kyc-step-card {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 24px 20px;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.18s;
+}
+.kyc-step-img {
+  width: 100%; height: 160px; object-fit: cover;
+  border-radius: 10px; margin-bottom: 16px;
+}
+.kyc-step-card:hover { border-color: rgba(246,139,31,0.35); box-shadow: 0 6px 24px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.kyc-step-num {
+  font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800;
+  background: var(--orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.kyc-step-icon { font-size: 1.3rem; margin-bottom: 12px; }
+.kyc-step-title { font-family: 'Cairo', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; color: var(--black); }
+.kyc-step-desc { font-size: 0.82rem; color: var(--gray); line-height: 1.6; flex: 1; }
+
+.kyc-docs-row {
+  margin-top: 14px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+}
+.doc-chip {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 10px; padding: 14px 16px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.82rem; font-weight: 500;
+  transition: border-color 0.2s;
+}
+.doc-chip:hover { border-color: var(--orange); }
+.doc-chip-icon { font-size: 1.1rem; flex-shrink: 0; }
+.doc-chip-check { margin-left: auto; color: var(--orange); font-size: 0.9rem; font-weight: 700; }
+
+.kyc-cta-row {
+  margin-top: 14px;
+  background: var(--black); border-radius: 12px;
+  padding: 22px 28px;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.kyc-cta-text h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: white; margin-bottom: 4px; }
+.kyc-cta-text p { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+
+/* ─── FAQ ─── */
+.faq-section { padding: 48px 15%; background: var(--white); border-top: 1px solid var(--border); }
+.faq-inner { display: grid; grid-template-columns: 280px 1fr; gap: 48px; }
+.faq-sidebar h2 { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; margin-bottom: 10px; line-height: 1.2; }
+.faq-sidebar p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; margin-bottom: 20px; }
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 0; font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem; font-weight: 600; color: var(--black); text-align: left; gap: 16px;
+  transition: color 0.2s;
+}
+.faq-q:hover { color: var(--orange); }
+.faq-icon { color: var(--orange); font-size: 1rem; transition: transform 0.25s; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-a-inner { font-size: 0.85rem; color: var(--gray); line-height: 1.7; padding-bottom: 14px; }
+.faq-item.open .faq-a { max-height: 200px; }
+.faq-a a { color: var(--orange); }
+
+/* ─── FINAL CTA ─── */
+.final-cta {
+  background: var(--orange); padding: 56px 48px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
+  text-align: center; flex-wrap: wrap; margin: 0 15% 24px; border-radius: 16px;
+}
+.final-cta h2 { font-family: 'Lato', sans-serif; font-size: 1.8rem; font-weight: 900; color: white; margin-bottom: 6px; }
+.final-cta p { font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+.btn-white {
+  background: white; color: var(--orange); font-weight: 700; font-size: 0.95rem;
+  padding: 12px 28px; border-radius: 6px; text-decoration: none; white-space: nowrap;
+  transition: transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.15); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--black); padding: 20px 48px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  font-size: 0.78rem; color: rgba(255,255,255,0.35);
+  margin: 0 15% 32px; border-radius: 12px;
+}
+/* ─── DIVIDER ─── */
+.section-divider { height: 1px; background: rgba(246,139,31,0.2); margin: 0 15%; }
+.foot-logo { font-family: 'Syne', sans-serif; font-weight: 800; color: var(--orange); font-size: 1rem; }
+footer a { color: rgba(255,255,255,0.35); text-decoration: none; margin-left: 16px; }
+footer a:hover { color: var(--orange); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+.hero-left { animation: fadeUp 0.5s ease both; }
+.hero-right { animation: fadeUp 0.5s 0.1s ease both; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .h-cards, .pricing-cards, .why-grid { grid-template-columns: 1fr 1fr; }
+  .kyc-grid, .kyc-docs-row { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .hero, .why-section, .page-section { margin: 12px 5% 0; padding: 28px 20px; }
+  .final-cta { margin: 0 5% 16px; padding: 40px 20px; }
+  footer { margin: 0 5% 16px; padding: 16px 20px; }
+  .section-divider { margin: 0 5%; }
+  .hero { flex-direction: column; }
+  .hero-stats-right { display: none; }
+  .h-cards, .pricing-cards, .kyc-grid, .kyc-docs-row, .why-grid { grid-template-columns: 1fr; }
+  .section-label { flex-wrap: wrap; }
+  .section-label-desc { text-align: left; margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- COMPACT HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <h1><span style="color: white;">عملاؤك على چوميا.</span><br><span>وأنت فين؟</span></h1>
+    <p class="hero-sub">انضم إلى أكبر منصة تجارة إلكترونية في أفريقيا وابدأ البيع لأكثر من 6 مليون عميل في مصر.</p>
+    <div class="hero-actions">
+      <a href="https://vendorcenter.jumia.com/sign-up" class="btn-primary" target="_blank">ابدأ البيع على چوميا</a>
+      <a href="https://vendorhub.jumia.com.eg/ar/%d8%a7%d8%a8%d8%af%d8%a3-%d9%82%d8%b5%d8%a9-%d9%86%d8%ac%d8%a7%d8%ad%d9%83-%d9%85%d8%b9-%d8%ac%d9%88%d9%85%d9%8a%d8%a7-%d9%85%d8%b5%d8%b1/" class="btn-ghost" target="_blank">بوابة البائعين</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─── WHY SELL ON JUMIA ─── -->
+<div class="why-section" id="why">
+  <div class="section-label">
+    <h2>ليه تبيع على چوميا؟</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-card-header"><div class="why-card-icon">🛍️</div><div class="why-card-title">وصّل منتجاتك لملايين العملاء</div></div>
+      <p class="why-card-desc">چوميا موجودة في ملايين البيوت في مصر. اعرض منتجاتك لملايين العملاء كل يوم.</p>
+    </div>
+    <div class="why-card why-card-money">
+      <div class="why-card-header"><div class="why-card-icon">💰</div><div class="why-card-title">اكسب أكتر</div></div>
+      <p class="why-card-desc">العمولة ورسوم الشحن بتتحسب بس لما الطلب يتسلم فعلاً. مفيش بيع = مفيش رسوم.</p>
+      <div class="why-money-links">
+        <a href="https://vendorhub.jumia.com.eg/ar/%d8%a7%d9%84%d8%b9%d9%85%d9%88%d9%84%d8%a7%d8%aa-15-1-2026/" target="_blank" class="why-mini-link">شوف نسب العمولة ←</a>
+        <a href="https://vendorhub.jumia.com.eg/ar/%d8%a7%d9%84%d9%85%d8%b5%d8%a7%d8%b1%d9%8a%d9%81-copy/" target="_blank" class="why-mini-link">شوف رسوم الشحن ←</a>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-header"><div class="why-card-icon">🆓</div><div class="why-card-title">فتح المتجر مجاني</div></div>
+      <p class="why-card-desc">فتح متجرك على چوميا مجاني تماماً. ابدأ في أي وقت وابدأ البيع بمجرد ما ترفع منتجاتك.</p>
+    </div>
+    <a href="https://vendorhub.jumia.com.eg/ar/shipping-and-delivery-2/" class="why-card why-card-link" target="_blank">
+      <div class="why-card-header"><div class="why-card-icon">🚚</div><div class="why-card-title">توصيل بدون ضغط</div></div>
+      <p class="why-card-desc">چوميا بتتولى التوصيل والمرتجعات وخدمة العملاء عنك. اختار النموذج اللي يناسب شغلك.</p>
+      <span class="why-card-cta">استكشف كل الأنظمة ←</span>
+    </a>
+    <div class="why-card">
+      <div class="why-card-header"><div class="why-card-icon">💪</div><div class="why-card-title">إحنا بنشيل عنك الهم</div></div>
+      <p class="why-card-desc">چوميا بتهتم بالتدريب، رفع المنتجات، التوصيل، تحصيل الفلوس، خدمة العملاء، وما بعد البيع، وأكتر من كده.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-card-header"><div class="why-card-icon">🎓</div><div class="why-card-title">تدريبات مجانية</div></div>
+      <p class="why-card-desc">أكاديمية چوميا هتساعدك تبقى خبير في التجارة الإلكترونية من خلال تدريبات متخصصة للبائعين الجدد والمتمرسين.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-card-header"><div class="why-card-icon">🤝</div><div class="why-card-title">فريق دعم البائعين</div></div>
+      <p class="why-card-desc">فريقنا الكبير من متخصصي دعم البائعين دايماً موجود عشان يساعدك ويجاوب على أي استفسار.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-card-header"><div class="why-card-icon">📈</div><div class="why-card-title">تحليلات وبيانات</div></div>
+      <p class="why-card-desc">تابع مبيعاتك، افهم عملاؤك، واتطور بناءً على بيانات حقيقية متاحة في Vendor Center بتاعك.</p>
+    </div>
+    <div class="why-card why-card-docs">
+      <div class="why-card-header"><div class="why-card-icon">🪪</div><div class="why-card-title">٣ مستندات بس وتبدأ</div></div>
+      <p class="why-card-desc">البداية سهلة. محتاج بس عدد قليل من المستندات عشان نتحقق من هويتك وتستلم مدفوعاتك بأمان.</p>
+      <a href="https://vendorhub.jumia.com.eg/ar/terms-and-agreements-2/" target="_blank" class="why-card-cta">شوف مستندات KYC ←</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SECTION 3: KYC / DOCUMENTS ─── -->
+<div class="page-section" id="getstarted">
+  <div class="section-label">
+    <h2>سجّل على چوميا في دقائق</h2>
+  </div>
+
+  <div class="kyc-grid">
+    <div class="kyc-step-card">
+      <img src="register_now.png" alt="سجّل حسابك" class="kyc-step-img">
+      <div class="kyc-step-num">١</div>
+      <div class="kyc-step-title">سجّل حسابك</div>
+      <p class="kyc-step-desc">املأ نموذج تسجيل البائع على Vendor Center. مش هياخد أكتر من ٥ دقائق.</p>
+    </div>
+    <div class="kyc-step-card">
+      <img src="become_an_expert_on_JUMIA.png" alt="بقى خبير في التجارة الإلكترونية" class="kyc-step-img">
+      <div class="kyc-step-num">٢</div>
+      <div class="kyc-step-title">بقى خبير في التجارة الإلكترونية</div>
+      <p class="kyc-step-desc">أكمل تدريب البائعين الجدد عشان تدير متجرك وتنمّي أعمالك بثقة.</p>
+    </div>
+    <div class="kyc-step-card">
+      <img src="list_your_product_and_start_selling.png" alt="ارفع منتجاتك وابدأ البيع" class="kyc-step-img">
+      <div class="kyc-step-num">٣</div>
+      <div class="kyc-step-title">ارفع منتجاتك وابدأ البيع</div>
+      <p class="kyc-step-desc">ارفع منتجاتك وابدأ توصل لملايين العملاء في مصر من أول يوم.</p>
+    </div>
+    <div class="kyc-step-card">
+      <img src="promotions_and_marketing.png" alt="استفد من العروض والتسويق" class="kyc-step-img">
+      <div class="kyc-step-num">٤</div>
+      <div class="kyc-step-title">استفد من العروض والتسويق</div>
+      <p class="kyc-step-desc">احصل على ظهور أكبر من خلال حملات چوميا وعروضها، واطّلع على بيانات المنتجات الأكتر مبيعاً عشان تكبّر مبيعاتك.</p>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ─── FINAL CTA ─── -->
+<div class="final-cta">
+  <div>
+    <h2>مستعد تبدأ رحلتك؟</h2>
+    <p>انضم لآلاف البائعين الناجحين وكبّر أعمالك مع چوميا مصر.</p>
+  </div>
+  <a href="https://vendorcenter.jumia.com/sign-up" class="btn-white" target="_blank">ابدأ البيع دلوقتي</a>
+</div>
+
+</body>
+</html>
+
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.ops-card, .journey-card, .price-card, .kyc-step-card, .doc-chip, .why-card').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(14px)';
+    el.style.transition = `opacity 0.45s ${i * 0.06}s ease, transform 0.45s ${i * 0.06}s ease`;
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
